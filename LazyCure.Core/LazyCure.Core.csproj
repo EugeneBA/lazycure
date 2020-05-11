@@ -99,17 +99,12 @@
     <Compile Include="Time\TimeLogs\TimeLogSerializer.cs" />
     <Compile Include="Time\TimeLogs\TimeLogsManager.cs" />
     <Compile Include="Time\TimeManager.cs" />
-    <Compile Include="Plugins\Twitter.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LazyCure.Shared\LazyCure.Shared.csproj">
       <Project>{61117267-380A-4D4B-8228-29F4CB193E44}</Project>
       <Name>LazyCure.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="Plugins\Twitterizer\Twitterizer2\Twitterizer2.csproj">
-      <Project>{2FDC3492-6B9E-4771-9755-7892C9CB1E96}</Project>
-      <Name>Twitterizer2</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

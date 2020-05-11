@@ -30,7 +30,7 @@ namespace LifeIdea.LazyCure.Core
         private IWorkingTimeManager workingTime;
         //private IHistoryDataProvider historyDataProvider;
         private ITimeLogsManager timeLogsManager;
-        private IExternalPoster externalPoster = new Twitter();
+        private IExternalPoster externalPoster = null;//new Twitter();
 
         #endregion Fields
 
@@ -189,7 +189,7 @@ namespace LifeIdea.LazyCure.Core
                 TimeManager.SplitByComma = settings.SplitByComma;
                 TimeManager.SwitchAtMidnight = settings.SwitchTimeLogAtMidnight;
                 ApplyTweetingActivity(settings);
-                ExternalPoster.AccessTokens = new TokensPair(settings.TwitterAccessToken, settings.TwitterAccessTokenSecret);
+                //ExternalPoster.AccessTokens = new TokensPair(settings.TwitterAccessToken, settings.TwitterAccessTokenSecret);
             }
         }
 
