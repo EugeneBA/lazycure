@@ -21,8 +21,6 @@ namespace LifeIdea.LazyCure.Core.Time
 
         ITimeLog TimeLog { get; }
 
-        ITimeSystem TimeSystem { get;}
-
         string TweetingActivity { get; set; }
     }
 }

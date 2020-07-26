@@ -6,7 +6,7 @@ namespace LifeIdea.LazyCure.Core.Time
     /// <summary>
     /// Splitting activity at midnight to 2 different timelogs
     /// </summary>
-    public class MidnightSwitcher:IMidnightCorrector
+    public class MidnightSwitcher
     {
         public void PerformMidnightCorrection(IActivity currentActivity, ITimeLogsManager timeLogsManager)
         {

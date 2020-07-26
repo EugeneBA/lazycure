@@ -9,7 +9,6 @@ namespace LifeIdea.TimeLanguage
 {
     public class Interpreter: IInterpreter
     {
-        private ITimeSystem timeSystem;
         private RunningActivity currentActivity;
         private IActivity lastActivity = null;
         private FileManager fileManager = new FileManager();
@@ -39,13 +38,10 @@ namespace LifeIdea.TimeLanguage
             }
         }
 
-        public Interpreter(ITimeSystem timeSystem) {
+        public Interpreter() {
             Load();
-            this.timeSystem = timeSystem;
-            currentActivity = new RunningActivity("", timeSystem);
+            currentActivity = new RunningActivity("");
         }
-
-        public Interpreter() : this(new NaturalTimeSystem()) { }
 
         public void ProcessLine(string line) {
             currentActivity.Name = line;

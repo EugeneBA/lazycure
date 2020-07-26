@@ -9,7 +9,6 @@ namespace LifeIdea.LazyCure.Core.Activities
     /// </summary>
     public class RunningActivity : ActivityBase
     {
-        public ITimeSystem timeSystem;
         public Boolean IsRunning = true;
         public const double MILLISECONDS_IN_ONE_SECOND = 1000;
         public const string TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
@@ -33,11 +32,10 @@ namespace LifeIdea.LazyCure.Core.Activities
             }
         }
 
-        public RunningActivity(string name, ITimeSystem timeSystem)
+        public RunningActivity(string name)
         {
             Name = name;
-            this.timeSystem = timeSystem;
-            this.start = timeSystem.Now;
+            this.start = DateTime.Now;
         }
         public void Stop()
         {
@@ -52,7 +50,6 @@ namespace LifeIdea.LazyCure.Core.Activities
         private RunningActivity(string name, RunningActivity previous)
         {
             Name = name;
-            this.timeSystem = previous.timeSystem;
             this.start = previous.start + previous.duration;
         }
         private TimeSpan RoundedDuration
@@ -67,7 +64,7 @@ namespace LifeIdea.LazyCure.Core.Activities
         }
         private void RecalculateDuration()
         {
-            duration = timeSystem.Now - Start;
+            duration = DateTime.Now - Start;
         }
 
         /// <summary>

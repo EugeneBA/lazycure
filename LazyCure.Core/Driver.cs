@@ -121,7 +121,7 @@ namespace LifeIdea.LazyCure.Core
         /// </summary>
         /// <param name="timeSystem"></param>
         /// <param name="settings"></param>
-        public Driver(ITimeSystem timeSystem, ISettings settings)
+        public Driver(ISettings settings)
         {
             //when reordering, be carefull, in order to pass only initialized objects
             this.fileManager = new FileManager(settings);
@@ -130,15 +130,13 @@ namespace LifeIdea.LazyCure.Core
             TaskCollection = LifeIdea.LazyCure.Core.Tasks.TaskCollection.Default;
             this.timeLogsManager = new TimeLogsManager(this.fileManager);
             HistoryDataProvider = new HistoryDataProvider(timeLogsManager, TaskCollection);
-            this.timeManager = new TimeManager(timeSystem, TimeLogsManager);
+            this.timeManager = new TimeManager(TimeLogsManager);
             HistoryDataProvider.CreateSummaries(TimeManager.TimeLog);
             this.workingTime = new WorkingTimeForDay(TimeManager.TimeLog, TaskCollection);
             this.efficiencyCalculator = new EfficiencyCalculator(workingTime);
             ApplySettings(settings);
         }
-
-        public Driver(ISettings settings) : this(new NaturalTimeSystem(), settings) { }
-
+        
         #endregion Constructors
 
         #region ILazyCureDriver Members
@@ -336,7 +334,7 @@ namespace LifeIdea.LazyCure.Core
             if (loadedTasks != null)
                 TaskCollection = loadedTasks;
             fileManager.LoadHistory(HistoryDataProvider.ActivitiesHistory);
-            LoadTimeLog(TimeManager.TimeSystem.Now);
+            LoadTimeLog(DateTime.Now);
             return true;
         }
 

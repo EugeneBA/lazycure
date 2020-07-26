@@ -7,7 +7,7 @@ namespace LifeIdea.LazyCure.Core.Tasks
     /// <summary>
     /// Store information about task
     /// </summary>
-    public class Task : TreeNode, ITask
+    public class Task : TreeNode
     {
         public readonly List<string> RelatedActivities = new List<string>();
         public bool IsWorking = true;

@@ -14,7 +14,7 @@ namespace LifeIdea.LazyCure.Core.Time
         private const string FIRST_ACTIVITY = "Activity1";
         private RunningActivity currentActivity;
         private TimeSpan maxDuration = TimeSpan.Parse("1:00");
-        private IMidnightCorrector midnightCorrector;
+        private MidnightSwitcher midnightCorrector;
         private RunningActivity previousActivity;
         private bool splitByComma;
         private bool switchAtMidnight;
@@ -40,7 +40,7 @@ namespace LifeIdea.LazyCure.Core.Time
             get { return currentActivity.Duration >= maxDuration; }
         }
 
-        public IMidnightCorrector MidnightCorrector
+        public MidnightSwitcher MidnightCorrector
         {
             set { midnightCorrector = value; }
         }
@@ -71,11 +71,6 @@ namespace LifeIdea.LazyCure.Core.Time
             set { timeLogsManager = value; }
         }
 
-        public ITimeSystem TimeSystem
-        {
-            get { return currentActivity.timeSystem; }
-        }
-
         public string TweetingActivity
         {
             get { return tweetingActivity; }
@@ -84,9 +79,9 @@ namespace LifeIdea.LazyCure.Core.Time
 
         #endregion Properties
 
-        public TimeManager(ITimeSystem timeSystem, ITimeLogsManager timeLogsManager)
+        public TimeManager(ITimeLogsManager timeLogsManager)
         {
-            currentActivity = new RunningActivity(FIRST_ACTIVITY, timeSystem);
+            currentActivity = new RunningActivity(FIRST_ACTIVITY);
             midnightCorrector = new MidnightSwitcher();
             if (timeLogsManager != null)
             {
@@ -94,9 +89,7 @@ namespace LifeIdea.LazyCure.Core.Time
                 timeLogsManager.ActivateTimeLog(currentActivity.Start.Date);
             }
         }
-
-        public TimeManager(ITimeSystem timeSystem) : this(timeSystem, null) { }
-
+        
         /// <summary>
         /// Finish activity and start the next
         /// </summary>
