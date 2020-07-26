@@ -116,6 +116,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Stopwatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stopwatch.Designer.cs">
+      <DependentUpon>Stopwatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Summary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpentInDiffDaysView.uk.resx">
       <DependentUpon>SpentInDiffDaysView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stopwatch.resx">
+      <DependentUpon>Stopwatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Summary.es.resx">
       <DependentUpon>Summary.cs</DependentUpon>
