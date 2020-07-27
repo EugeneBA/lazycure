@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using LifeIdea.LazyCure.Core.Activities;
 using Microsoft.Win32;
 using LifeIdea.LazyCure.Shared.Constants;
 using LifeIdea.LazyCure.Shared.Interfaces;
@@ -18,7 +19,7 @@ namespace LifeIdea.LazyCure.UI
     /// <summary>
     /// Represent classic main window GUI
     /// </summary>
-    public partial class Main : MainBase, IMainForm, IDisposable
+    public partial class Main : Form, IMainForm, IDisposable
     {
         private const int HotKeyMessageID = 0x0312;
         private const int HotKeyToActivateID = 1;
@@ -76,6 +77,42 @@ namespace LifeIdea.LazyCure.UI
             miSummary.Checked = Dialogs.Summary.Visible;
             miTasks.Checked = Dialogs.TaskManager.Visible;
             miSpentOnActivityInDifferentDays.Checked = Dialogs.SpentOnDiffDays.Visible;
+        }
+
+        protected readonly string DefaultActivity = Constants.DefaultActivity;
+        protected readonly string nextActivity = Constants.DefaultActivity;
+
+        public void Display()
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            Activate();
+        }
+
+        public string GetPopupText(string activityName, IActivity activity)
+        {
+            int maxLengthAllowed = 63;
+            string timePart = String.Format(" " + Constants.FromAndFor, Format.Time(activity.Start),
+                Format.Duration(activity.Duration));
+            int activityMaxLength = maxLengthAllowed - timePart.Length;
+            string activityPart = activityName;
+            if (activityName.Length > activityMaxLength)
+                activityPart = activityName.Substring(0, activityMaxLength - 1) + "…";
+            return activityPart + timePart;
+        }
+
+        public void SetLocation(Point location)
+        {
+            Size desktopSize = Screen.PrimaryScreen.WorkingArea.Size;
+            if (location.X < 0)
+                location.X = 0;
+            if (location.X > desktopSize.Width - Width)
+                location.X = desktopSize.Width - Width;
+            if (location.Y < 0)
+                location.Y = 0;
+            if (location.Y > desktopSize.Height - Height)
+                location.Y = desktopSize.Height - Height;
+            Location = location;
         }
 
         #region Private Methods

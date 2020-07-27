@@ -57,21 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IActivitiesHistory.cs" />
-    <Compile Include="Interfaces\IDataProvider.cs" />
-    <Compile Include="Interfaces\IHistoryDataProvider.cs" />
-    <Compile Include="Interfaces\ILanguageSettingsProvider.cs" />
-    <Compile Include="Interfaces\ITaskActivityLinker.cs" />
-    <Compile Include="Interfaces\ITimeLog.cs" />
-    <Compile Include="Interfaces\ITimeLogsFolderSettingSource.cs" />
-    <Compile Include="Interfaces\ITimeLogsFileManager.cs" />
-    <Compile Include="Interfaces\ITimeLogsManager.cs" />
     <Compile Include="Structures\TokensPair.cs" />
     <Compile Include="Tools\Format.cs" />
-    <Compile Include="Interfaces\IActivity.cs" />
-    <Compile Include="Interfaces\ILazyCureDriver.cs" />
-    <Compile Include="Interfaces\ISettings.cs" />
-    <Compile Include="Interfaces\ITaskViewDataSource.cs" />
     <Compile Include="Tools\LinkBuilder.cs" />
     <Compile Include="Tools\Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

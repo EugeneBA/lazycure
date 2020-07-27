@@ -9,7 +9,7 @@ using LifeIdea.LazyCure.UI.Backend;
 
 namespace LifeIdea.LazyCure.UI
 {
-    public partial class Summary : Backend.View,ISummaryView
+    public partial class Summary : Backend.View,IView
     {
         public enum Period{
             Today,

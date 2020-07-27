@@ -54,11 +54,23 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\IActivitiesHistory.cs" />
+    <Compile Include="Activities\IActivity.cs" />
+    <Compile Include="Interfaces\IDataProvider.cs" />
+    <Compile Include="Interfaces\IHistoryDataProvider.cs" />
+    <Compile Include="Interfaces\ILanguageSettingsProvider.cs" />
+    <Compile Include="Interfaces\ILazyCureDriver.cs" />
+    <Compile Include="Interfaces\ISettings.cs" />
+    <Compile Include="Interfaces\ITaskActivityLinker.cs" />
+    <Compile Include="Interfaces\ITaskViewDataSource.cs" />
+    <Compile Include="Interfaces\ITimeLogsFolderSettingSource.cs" />
+    <Compile Include="IO\ITimeLogsFileManager.cs" />
     <Compile Include="Reports\IActivitiesEnumeratorProvider.cs" />
     <Compile Include="Localization\ILanguageSwitcher.cs" />
     <Compile Include="Localization\LanguageSwitcher.cs" />
@@ -92,6 +104,8 @@
     <Compile Include="Time\MidnightSwitcher.cs" />
     <Compile Include="Tasks\Task.cs" />
     <Compile Include="Tasks\TaskCollection.cs" />
+    <Compile Include="Time\TimeLogs\ITimeLog.cs" />
+    <Compile Include="Time\TimeLogs\ITimeLogsManager.cs" />
     <Compile Include="Time\TimeLogs\TimeLog.cs" />
     <Compile Include="Time\TimeLogs\TimeLogSerializer.cs" />
     <Compile Include="Time\TimeLogs\TimeLogsManager.cs" />

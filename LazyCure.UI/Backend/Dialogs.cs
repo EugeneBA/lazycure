@@ -9,11 +9,11 @@ namespace LifeIdea.LazyCure.UI.Backend
         private static OpenFileDialog open = null;
         private static SaveFileDialog save = null;
         private static ITimeLogView timeLog = null;
-        private static ISummaryView summary = null;
+        private static IView summary = null;
         private static AboutBox about = null;
         private static Options options = null;
         private static TaskManager taskManager = null;
-        private static ISpentOnDiffDaysView spentOnDiffDays = null;
+        private static IView spentOnDiffDays = null;
 
         public static ILazyCureDriver LazyCureDriver = null;
         internal static IMainForm MainForm = null;
@@ -76,7 +76,7 @@ namespace LifeIdea.LazyCure.UI.Backend
             }
         }
 
-        public static ISummaryView Summary
+        public static IView Summary
         {
             get
             {
@@ -108,7 +108,7 @@ namespace LifeIdea.LazyCure.UI.Backend
             }
         }
 
-        public static ISpentOnDiffDaysView SpentOnDiffDays
+        public static IView SpentOnDiffDays
         {
             get
             {

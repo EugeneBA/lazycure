@@ -1,6 +1,6 @@
 using System;
 
-namespace LifeIdea.LazyCure.Shared.Interfaces
+namespace LifeIdea.LazyCure.Core.Activities
 {
     public interface IActivity
     {

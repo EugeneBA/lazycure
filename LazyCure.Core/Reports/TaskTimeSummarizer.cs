@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using LifeIdea.LazyCure.Core.Activities;
 using LifeIdea.LazyCure.Shared.Interfaces;
 using LifeIdea.LazyCure.Core.Tasks;
+using LifeIdea.LazyCure.Core.Time.TimeLogs;
 
 namespace LifeIdea.LazyCure.Core.Reports
 {

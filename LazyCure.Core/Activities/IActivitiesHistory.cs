@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LifeIdea.LazyCure.Shared.Interfaces
+namespace LifeIdea.LazyCure.Core.Activities
 {
     public interface IActivitiesHistory
     {

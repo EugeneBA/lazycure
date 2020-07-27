@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using LifeIdea.LazyCure.Core.Activities;
 using LifeIdea.LazyCure.Shared.Structures;
 
 namespace LifeIdea.LazyCure.Shared.Interfaces

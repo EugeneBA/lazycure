@@ -4,6 +4,7 @@ using LifeIdea.LazyCure.Core.Tasks;
 using LifeIdea.LazyCure.Core.Time.TimeLogs;
 using LifeIdea.LazyCure.Shared.Interfaces;
 using System.Collections.Generic;
+using LifeIdea.LazyCure.Core.Activities;
 
 namespace LifeIdea.LazyCure.Core.Reports
 {

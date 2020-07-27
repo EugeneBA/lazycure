@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using LifeIdea.LazyCure.Core.Activities;
 using LifeIdea.LazyCure.Core.IO;
 using LifeIdea.LazyCure.Shared.Interfaces;
 

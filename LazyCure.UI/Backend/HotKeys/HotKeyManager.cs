@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+
 using LifeIdea.LazyCure.Shared.Tools;
 
 namespace LifeIdea.LazyCure.UI.Backend.HotKeys
@@ -15,8 +16,8 @@ namespace LifeIdea.LazyCure.UI.Backend.HotKeys
 
         public bool Register(IWin32Window window, int id, IHotKeyCodeProvider hotKey)
         {
-			try
-			{
+            try
+            {
                 if (window == null)
                 {
                     Log.Error("Could not register hot key for null window");
@@ -28,13 +29,13 @@ namespace LifeIdea.LazyCure.UI.Backend.HotKeys
                     return false;
                 }
                 return RegisterHotKey(window.Handle, id, hotKey.ModifiersCode, hotKey.Code);
-			}
-			catch(Exception ex)
-			{
+            }
+            catch (Exception ex)
+            {
                 Log.Error(String.Format("Could not register hot key '{0}'", hotKey));
                 Log.Exception(ex);
-				return false;
-			}
+                return false;
+            }
         }
 
         public bool Unregister(IWin32Window window, int id)

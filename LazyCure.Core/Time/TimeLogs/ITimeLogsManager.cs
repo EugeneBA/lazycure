@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using LifeIdea.LazyCure.Core.Activities;
+using LifeIdea.LazyCure.Core.IO;
+using LifeIdea.LazyCure.Shared.Interfaces;
 
-namespace LifeIdea.LazyCure.Shared.Interfaces
+namespace LifeIdea.LazyCure.Core.Time.TimeLogs
 {
     /// <summary>
     /// Manage time logs

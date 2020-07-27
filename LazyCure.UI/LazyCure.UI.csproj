@@ -72,8 +72,6 @@
     <Compile Include="Backend\HotKeys\HotKeys.cs" />
     <Compile Include="Backend\HotKeys\IHotKeyCodeProvider.cs" />
     <Compile Include="Backend\IMainForm.cs" />
-    <Compile Include="Backend\ISpentOnDiffDaysView.cs" />
-    <Compile Include="Backend\ISummaryView.cs" />
     <Compile Include="Backend\ITimeLogView.cs" />
     <Compile Include="Backend\TreeBinder.cs" />
     <Compile Include="Backend\IView.cs" />
@@ -94,9 +92,6 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainBase.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="OathAuthorize.cs">
       <SubType>Form</SubType>
@@ -206,9 +201,6 @@
     <EmbeddedResource Include="Main.uk.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainBase.resx">
-      <DependentUpon>MainBase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OathAuthorize.resx">
       <DependentUpon>OathAuthorize.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -287,6 +279,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LazyCure.Core\LazyCure.Core.csproj">
+      <Project>{055BDC4B-9AD3-471A-B3E3-19CBFC45C9C8}</Project>
+      <Name>LazyCure.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LazyCure.Shared\LazyCure.Shared.csproj">
       <Project>{61117267-380A-4D4B-8228-29F4CB193E44}</Project>
       <Name>LazyCure.Shared</Name>

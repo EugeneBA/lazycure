@@ -7,7 +7,7 @@ using LifeIdea.LazyCure.Shared.Tools;
 
 namespace LifeIdea.LazyCure.UI
 {
-    public partial class SpentInDiffDaysView : Backend.View, ISpentOnDiffDaysView
+    public partial class SpentInDiffDaysView : Backend.View, IView
     {
         private IHistoryDataProvider historyDataProvider;
 

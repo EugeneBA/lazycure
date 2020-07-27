@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using LifeIdea.LazyCure.Core.Activities;
+using LifeIdea.LazyCure.Core.Time.TimeLogs;
 
 namespace LifeIdea.LazyCure.Shared.Interfaces
 {
